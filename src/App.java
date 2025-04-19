@@ -1,4 +1,6 @@
 import java.util.Scanner;
+
+import controllers.MetodoOrdenamiento;
 import models.Persona;
 
 public class App {
@@ -6,12 +8,11 @@ public class App {
         
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Busqueda Binaria");
         int totalPersonas = validarPositivo(scanner);
         Persona[] personas = new Persona[totalPersonas];
 
         for(int i = 0; i < totalPersonas; i++){
-            System.out.println("Ingrese datos de la persona: " +(i+1));
+            System.out.println("Ingrese datos de la persona " +(i+1));
             System.out.print("Nombre -> ");
             scanner.nextLine();
             String nombre = scanner.nextLine();
@@ -19,6 +20,18 @@ public class App {
 
             personas[i] = new Persona(nombre, edad);
         }
+
+        System.out.println("Personas ingresadas: ");
+        for(Persona persona: personas){
+            System.out.println(persona);
+        }
+        System.out.println();
+
+        MetodoOrdenamiento metodoOrdenamiento = new MetodoOrdenamiento();
+        metodoOrdenamiento.ordenamientoPersonas(totalPersonas, personas);
+
+        int[] arreglo = metodoOrdenamiento.arregloEdades(personas, totalPersonas);
+        metodoOrdenamiento.imprimirArreglo(arreglo);
 
         scanner.close();
     }
