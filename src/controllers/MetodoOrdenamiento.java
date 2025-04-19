@@ -29,7 +29,7 @@ public class MetodoOrdenamiento {
 
     public void imprimirArreglo(int [] edades){
         for(int i = 0; i < edades.length; i++){
-            System.out.print(edades[i] + "\t");
+            System.out.print(edades[i] + "  |  ");
         }
         System.out.println();
     }

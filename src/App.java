@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+import controllers.MetodoBBinaria;
 import controllers.MetodoOrdenamiento;
 import models.Persona;
 
@@ -31,7 +32,10 @@ public class App {
         metodoOrdenamiento.ordenamientoPersonas(totalPersonas, personas);
 
         int[] arreglo = metodoOrdenamiento.arregloEdades(personas, totalPersonas);
-        metodoOrdenamiento.imprimirArreglo(arreglo);
+        metodoOrdenamiento.imprimirArreglo(arreglo);   
+        
+        MetodoBBinaria metodoBBinaria = new MetodoBBinaria(arreglo, personas);
+        metodoBBinaria.showPersonByAge();
 
         scanner.close();
     }
