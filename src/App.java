@@ -1,7 +1,6 @@
-import java.util.Scanner;
-
 import controllers.MetodoBBinaria;
 import controllers.MetodoOrdenamiento;
+import java.util.Scanner;
 import models.Persona;
 
 public class App {

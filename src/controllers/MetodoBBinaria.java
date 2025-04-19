@@ -1,13 +1,13 @@
 package controllers;
 
-import view.ShowConsole;
 import models.Persona;
+import view.ShowConsole;
 
 public class MetodoBBinaria {
 
     private Persona[] people;
     private ShowConsole showConsole;
-    private int [] arregloEdades;
+    private int [] arregloEdades; //arreglo ordenado
     
 
     public MetodoBBinaria(int[] arregloEdades, Persona[] personas) {
@@ -21,17 +21,21 @@ public class MetodoBBinaria {
         int bajo = 0;
         int alto = (arregloEdades.length - 1);
 
+        
         while(bajo <= alto){
-            
-            int central = (bajo + alto)/2;
 
-            if(arregloEdades[central] == edad){
+            int central = (bajo + alto)/2;
+            System.out.print("Bajo = " +bajo + "  Alto = " + alto + "   centro = " +central + "  valorCentro = " +arregloEdades[central]);
+
+            if(arregloEdades[central] == edad){ // caso en el que el numero buscado coincide con el central calculado
                 return central;
             }
 
             if(arregloEdades[central] < edad){ //nos vamos a la derecha, se actualiza el bajo
+                System.out.println("  DERECHA --> ");
                 bajo = central + 1;
             }else {
+                System.out.println("  IZQUIERDA --> ");
                 alto = central - 1;
             }
         }
@@ -45,6 +49,7 @@ public class MetodoBBinaria {
         if(indexPerson == -1){
             showConsole.showMesagge("NO existe la persona buscada");
         } else{
+            System.out.println();
             showConsole.showMesagge("Persona con la edad -> " + ageToFind + " ENCONTRADA");
             showConsole.showMesagge(people[indexPerson].toString());
         }
