@@ -8,7 +8,7 @@ public class MetodoOrdenamiento {
         for(int i = 0; i < cantidad; i++){
             for(int j = 0; j < cantidad -i-1; j++){
 
-                if(personas[j].getEdad() > personas[j + 1].getEdad()){ // colocamos getEdad porq nuestro atributo es privado
+                if(personas[j].getEdad() > personas[j + 1].getEdad()){ 
                     Persona temp = personas[j];
                     personas[j] = personas[j + 1];
                     personas[j + 1] = temp;
@@ -23,7 +23,6 @@ public class MetodoOrdenamiento {
         for(int i = 0; i < cantidad; i++){
             edades[i] = personas[i].getEdad();
         }
-
         return edades;
     }
 

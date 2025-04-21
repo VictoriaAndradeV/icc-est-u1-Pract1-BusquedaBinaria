@@ -21,6 +21,7 @@ public class App {
             personas[i] = new Persona(nombre, edad);
         }
 
+        System.out.println();
         System.out.println("Personas ingresadas: ");
         for(Persona persona: personas){
             System.out.println(persona);
@@ -28,6 +29,7 @@ public class App {
         System.out.println();
 
         MetodoOrdenamiento metodoOrdenamiento = new MetodoOrdenamiento();
+        System.out.println("Arreglo ordenado");
         metodoOrdenamiento.ordenamientoPersonas(totalPersonas, personas);
 
         int[] arreglo = metodoOrdenamiento.arregloEdades(personas, totalPersonas);
@@ -60,7 +62,7 @@ public class App {
             System.out.print("Edad -> ");
             edad = scanner.nextInt();
             if ((edad <= 0)|| (edad > 110)){
-                System.out.println("La edad debe ser positiva, ingrese nuevamente.");
+                System.out.println("La edad ingresada debe estar en el rango (1-110), ingrese nuevamente.");
             }
         }while ((edad <= 0)|| (edad > 110));
 
